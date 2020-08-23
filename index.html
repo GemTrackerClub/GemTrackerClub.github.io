@@ -1,7 +1,289 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>GemTracker.club</title>
+  <meta name="description" content="Uniswap and DEXes gem tracking tool">
+  <meta name="author" content="Tomasz Kowalczyk">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/raleway.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/github-prettify-theme.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/run_prettify.js"></script>
+  <script src="js/site.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script>
+    $(function() {
+      $("#carousel").slick()
+    });
+  </script>
+
+</head>
+<body class="code-snippets-visible">
+
+  <div class="corner-ribbon top-left sticky red shadow" id="ribbon">
+    <a href="https://t.me/GemTrackerClub">Our free product</a>
+  </div>
+
+  <div class="container">
+    <section class="header">
+      <img src="images/gemtracker.png" style="width: 100px"/>
+      <h1 class="title" style="font-weight: bold">GemTracker.club</h1>
+      <h3 class="title">Our platform is helping investors in tracking and researching gems.</h3>
+
+      <div class="docs-section" style="padding-top: 10px">
+
+        <div class="docs-section-1">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localstack.github.io" data-text="LocalStack - Develop and test your cloud apps offline.">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <iframe src="https://ghbtns.com/github-btn.html?user=GemTrackerClub&amp;repo=GemTracker&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20" style="margin-left: 10px"></iframe>
+          <iframe src="https://ghbtns.com/github-btn.html?user=GemTrackerClub&amp;repo=GemTracker&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+          <p>
+            <script type="text/javascript">(function() {var script=document.createElement("script");script.type="text/javascript";script.async =true;script.src="//telegram.im/widget-button/index.php?id=@GemTrackerClub";document.getElementsByTagName("head")[0].appendChild(script);})();</script>
+<a href="https://telegram.im/@GemTrackerClub" target="_blank" class="telegramim_button telegramim_shadow" style="font-size:26px;width:176px;background:#27A5E7;box-shadow:1px 1px 5px #27A5E7;color:#FFFFFF;border-radius:82px;" title="Subscribe to our free channel on Telegram"><i></i><small><span class="telegramim_count" data-for="@GemTrackerClub">...</span> пользователей</small></a>
+          </p>
+        </div>
+
+        <div class="value-prop row" style="text-align: center">
+          <div class="four columns value-prop">
+            <img class="value-img" style="width: 50px" src="images/icons/flash.png">
+            Enables a highly efficient notifications based on Telegram. Use it, everywhere you are, within seconds.
+          </div>
+          <div class="four columns value-prop">
+            <img class="value-img" style="width: 50px" src="images/icons/money.png">
+            Huge cost savings for researching and tracking newly added projects to most popular DEXes. No other tools needed.
+          </div>
+          <div class="four columns value-prop">
+            <img class="value-img" style="width: 50px" src="images/icons/ci.png">
+            Improve <abbr title="Do Your Own Research">DYOR</abbr> while trying to catch the most promising cryptocurrency based projects.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#howtouse">How to use</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#testimonials">Testimonials</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#pricing">Pricing</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="docs-section" id="intro">
+      <h6 class="docs-header">Intro</h6>
+      <p>
+        GemTracker provides instant notification about any changes from decentralized world straight to you 
+        (newly added tokens, whales movements, token transfers and more...)
+      </p>
+      <p>
+        <b>Our users love it</b>. Check out the
+        <a href="https://github.com/GemTrackerClub">Github repository</a>, or search on
+        <a href="https://twitter.com/search?q=gemtracker">Twitter</a>/<a
+          href="https://www.google.com/search?q=gemtracker">Google</a>
+          to find out what people have to say about GemTracker.
+      </p>
+    </div>
+
+    <div class="docs-section" id="howtouse">
+      <h6 class="docs-header">How to use</h6>
+      <p>
+        After getting notification from <strong>GemTracker</strong> on Telegram about adding new token to <abbr title="decentralized exchange">DEX</abbr>.
+      </p>
+      <p>
+        <strong>GemTracker</strong> is ready to help you with <abbr title="Do Your Own Research">DYOR</abbr> but will not do it for you.
+      </p>
+      <p>
+        Feel free to use provided features, described below:
+      <ol>
+        <li>Network effect (check how this project is shilling on social media):
+          <ul>
+            <li><strong>Twitter mentions</strong> - check tweets with symbol of this token,</li>
+            <li><strong>Reddit questions</strong> - find out what community says on Reddit,</li>
+            <li><strong>4chan hype</strong> - maybe anonymous people are trying to pump this project</li>
+          </ul>
+        </li>
+        <li>Statistics (few metrics from blockchain):
+          <ul>
+            <li><strong>EthPlorer</strong> - check holders, contract creator, transactions and more</li>
+            <li><strong>blockchair</strong> - check when created, in which block and more</li>
+          </ul>
+        </li>
+        <li>Check this token on <a href="https://uniswap.info/home">Uniswap</a>:
+          <ul>
+            <li><strong>Info</strong> - the best place to check basic metrics like Liquidity, Volume, Transactions</li>
+            <li><strong>Buy</strong> - if you want to buy it, click</li>
+            <li><strong>Sell</strong> - if you want to sell it, click</li>
+          </ul>
+        </li>
+        <li>Check this token on <a href="https://etherscan.io/">EtherScan</a>:
+          <ul>
+            <li><strong>EthScan</strong> - quick info about token from Ethereum blockchain</li>
+            <li><strong>Contract</strong> - check the smart contract of this token (verified?)</li>
+            <li><strong>Hodlers</strong> - check how many address are hodling this token</li>
+          </ul>
+        </li>
+      </ol>
+      </p>
+    </div>
+
+    <div class="docs-section" id="testimonials">
+      <h6 class="docs-header">Testimonials</h6>
+      <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true}' id="carousel">
+        <div>
+          <p>
+            GemTracker is a tool that came out on time during DeFi season. 
+            It's helping us to maximize our profit while investing in new tokens. 
+            For now, this fantastic tool is showing us the tokens which are listing on uniswap. 
+            It's saving our time by not only informing us about a new token on uniswap... 
+            it's also providing us with a convenient link to the right place where we can buy, 
+            sell or just check the top holders, etc.. It has been created by a programmer and crypto investor 
+            who knew that we needed GemTracker's daily signals to improve our dynamic on the market. 
+            Good job!
+          </p>
+          <p>
+            <strong>Author: </strong><i>Szarlotka</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            GemTracker has proven to be very useful in discovering new tokens on uniswap. 
+            I've been able to find projects in the early stages, and after doing research, can make a decision on whether they are worth investing in, or not. 
+            We all know that buying tokens in the first days of release can lead to huge profits, and #gemtracker is a necessary tool to help achieve those goals.
+          </p>
+          <p>
+            <strong>Author: </strong><i>Sheepy</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            As a fan of tracking new tokens appearing on market, I have been looking for a long time for a app that would 
+            make it easier for me.  And... Here it is! #gemtracker! Tool is ideal in its simplicity and designed to be clear to everyone. 
+            I can't waint for the creator to introduce the signals option for token with sudden increase of liquidity!
+          </p>
+          <p>
+            <strong>Author: </strong><i>Formacjazolwia</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            The best tool for tracking new gems on Uniswap IMO. 
+            Gametracker allows me to quickly check coin information on Reddit, 4chan, Twitter, Ethploler and Blockchair, 
+            and also gives you the ability to quickly buy a coin without searching and copying the smart contract address, 
+            it's all automatic. Very fast and professional support. I recommend it to all seekers of digital diamonds.
+          </p>
+          <p>
+            <strong>Author: </strong><i>Wojciech</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            gametracker – what can i say…i just love this project and this tool, its so helpful. 
+            Hard to imagin now trading day without this, since i start to use it. A lot of advanced features, 
+            that can really help you make your own research. Project its still developing, 
+            owner cooparete with community to improve it every each day.
+          </p>
+          <p>
+            <strong>Author: </strong><i>Daniel</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            This is the perfect solution for all gem seekers. Gemtracker provides all new coins from the uniswap exchange with links
+             to purchase and with very useful other links include gem info auto searching in social media i.e.
+              4chan, reddit and twitter. The project is constantly grow and being developed and supported on telegram group. 
+              Its DEFI time, its #GEMTRACKER time. #musthave
+          </p>
+          <p>
+            <strong>Author: </strong><i>Grzegorz</i>
+          </p>
+        </div>
+        <div>
+          <p>
+            Jest dla mnie bardzo przydatnym narzędziem. Ciężko jest mi sobie wyobrazić lepsze narzędzie do znajdowania prawdziwych perełek. 
+            Projekt jest cały czas rozwijany, co chwilę dochodzą nowe opcje. Grupa również Jet bardzo pomocna. Bardzo dziękuję.
+          </p>
+          <p>
+            <strong>Author: </strong><i>noluck</i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="pricing">
+      <h6 class="docs-header">Pricing</h6>
+      <p>
+        Premium version will be <strong>available soon</strong>, you can always use our <a href="https://t.me/GemTrackerClub">free version</a> as long as you wish.
+      </p>
+
+    </div>
+
+    <div class="docs-section" id="contact">
+      <h6 class="docs-header">Contact</h6>
+      <div class="row">
+        <div class="twelve columns">
+          <p>Feel free to talk with us at
+            <a href="mailto:gemtrackerclub@gmail.com">gemtrackerclub@gmail.com</a>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="footer u-full-width">
+    <div class="container">
+      <div class="row">
+        <div class="three columns">
+          <h7><b>Navigation</b></h7>
+          <p style="font-size: 13px">
+          <a href="#intro">Intro</a><br/>
+          <a href="#pricing">Pricing</a><br/>
+          <a href="#contact">Contact</a>
+          </p>
+        </div>
+        <div class="four columns">
+          <h7><b>Resources</b></h7>
+          <p style="font-size: 13px">
+          <a href="https://github.com/GemTrackerClub">Github</a><br/>
+          <a href="https://whitepaper.gemtracker.club/">Whitepaper</a> (coming soon)<br/>
+          <a href="">Terms and Conditions</a> (coming soon)
+          </p>
+        </div>
+        <div class="five columns center">
+          &copy; 2020 GemTracker
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
