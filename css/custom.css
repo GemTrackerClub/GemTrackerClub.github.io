@@ -155,6 +155,12 @@ button.slick-prev::before, button.slick-next::before {
 .left, td.left, th.left, table td.left, table th.left {
 	text-align: left;
 }
+.small {
+  font-size: small;
+}
+.very-small {
+  font-size: x-small;
+}
 
 /* Larger than phone */
 @media (min-width: 550px) {
@@ -180,6 +186,7 @@ button.slick-prev::before, button.slick-next::before {
     left: 0;
     max-height: none; }
 }
+
 
 /* Larger than tablet */
 @media (min-width: 750px) {
