@@ -13,16 +13,12 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/github-prettify-theme.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/run_prettify.js"></script>
-  <script src="js/site.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/site.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
-
-  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27632895-6"></script>
@@ -34,10 +30,12 @@
     gtag('config', 'UA-27632895-6');
   </script>
 
-
   <script>
     $(function() {
       $("#carousel").slick()
+    });
+    $(function() {
+      $("#carousel_integrations").slick()
     });
   </script>
 
@@ -85,10 +83,12 @@
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#howtouse">How to use</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#testimonials">Testimonials</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#premium">Premium</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#features">Features</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#integrations">Integrations</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#team">Team</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -112,7 +112,7 @@
     <div class="docs-section" id="howtouse">
       <h6 class="docs-header">How to use</h6>
       <p>
-        After getting notification from <strong>GemTracker</strong> on Telegram about adding new token to <abbr title="decentralized exchange">DEX</abbr>.
+        <strong>GemTracker</strong> sends notification to Telegram channel about newly added or removed tokens from <abbr title="decentralized exchange">DEX</abbr>.
       </p>
       <p>
         <strong>GemTracker</strong> is ready to help you with <abbr title="Do Your Own Research">DYOR</abbr> but will not do it for you.
@@ -120,17 +120,22 @@
       <p>
         Feel free to use provided features, described below:
       <ol>
-        <li>Network effect (check how this project is shilling on social media):
+        <li>Network effect (check how this project is getting shilled on social media):
           <ul>
-            <li><strong>Twitter mentions</strong> - check tweets with symbol of this token,</li>
-            <li><strong>Reddit questions</strong> - find out what community says on Reddit,</li>
-            <li><strong>4chan hype</strong> - maybe anonymous people are trying to pump this project</li>
+            <li><strong>Twitter</strong> - check tweets with symbol or token name,</li>
+            <li><strong>Reddit</strong> - find out what community says on Reddit based on token symbol and name,</li>
+            <li><strong>4chan</strong> - digg into anonymous part of the Internet and try to find out what are they saying</li>
           </ul>
         </li>
         <li>Statistics (few metrics from blockchain):
           <ul>
             <li><strong>EthPlorer</strong> - check holders, contract creator, transactions and more</li>
             <li><strong>blockchair</strong> - check when created, in which block and more</li>
+          </ul>
+        </li>
+        <li>Charts (something for <abbr title="technical analytics">TA</abbr> specialists):
+          <ul>
+            <li><strong>ChartEx</strong> - check how the price is going during the time</li>
           </ul>
         </li>
         <li>Check this token on <a href="https://uniswap.info/home">Uniswap</a>:
@@ -236,14 +241,276 @@
 
     <div class="docs-section" id="premium">
       <h6 class="docs-header">Premium</h6>
-      
-      <p>We are going to run premium <strong>GemTracker</strong> version.
-      </p>
 
-      <p>
-        To be notified about premium version release and token distribution please follow us on <a href="https://t.me/GemTrackerAnnouncements">Telegram Announcements Channel</a>.
-      </p>
+      <div id="prepare">
+        <p>
+          Please connect your MetaMask wallet to get access to premium version.
+        </p>
 
+        <button class="button button-primary" id="btn-connect">
+          Connect wallet
+        </button>
+
+      </div>
+
+      <div id="connected" style="display: none">
+
+        <button class="button button-primary" id="btn-disconnect">
+          Disconnect wallet
+        </button>
+
+        <div id="donate">
+          <input type="number" min="0.1" max="10" step="0.05" placeholder="Min value is 0.1" class="form-control" id="donate-value">
+
+          <button class="button button-primary" id="btn-donate">
+            Donate (ETH)
+          </button>
+        </div>
+
+        <hr>
+
+        <div id="network">
+          <p>
+            <strong>Connected blockchain:</strong> <span id="network-name"></span>
+          </p>
+
+          <p>
+            <strong>Selected account:</strong> <span id="selected-account"></span>
+          </p>
+
+        </div>
+
+        <hr>
+
+      </div>
+
+    </div>
+
+    <div class="docs-section" id="features">
+      <h6 class="docs-header">Features</h6>
+      <div class="docs-example">
+        <table class="u-full-width center">
+          <thead>
+            <tr>
+              <th class="left">Feature</th>
+              <th>Free Edition</th>
+              <th>Premium Edition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><strong>Uniswap</strong> notifications*</td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>Twitter</strong> integration</td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>Reddit</strong> integration</td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>4Chan</strong> integration</td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Links to <strong>Etherscan</strong></td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Links to <strong>Ethploler</strong></td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Links to <strong>blockchair</strong></td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>ChartEx</strong> integration</td>
+              <td>&#x2714;</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Initial price info</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Transactions number (inital, after listing on Uniswap)</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Token transfers (inital, after listing on Uniswap)</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Contract owner address</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Total supply</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Liquidity details</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Contract verification</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>DEXTools</strong> integration</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>AstroTools</strong> integration</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><strong>UniCrypt</strong> integration</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Main holders and their share it total supply</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left">Ability to propose new features</td>
+              <td>-</td>
+              <td>&#x2714;</td>
+            </tr>
+            <tr>
+              <td class="left"><i>Project tokens and access to dedicated Web service</i></td>
+              <td>-</td>
+              <td>Q1 2021</td>
+            </tr>
+            <tr>
+              <td class="left">Updates / Bug Fixes</td>
+              <td>occasionally</td>
+              <td>frequently**</td>
+            </tr>
+            <tr>
+              <td class="left">You're supporting the Project</td>
+              <td>-</td>
+              <td><span style="color:#ff0000; font-size: 20px; font-family: 'arial unicode MS', Arial">&hearts;</span></td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td>
+                <a class="button button-primary" href="https://t.me/GemTrackerClub">Check</a>
+              </td>
+              <td>
+                <a class="button button-primary" href="#premium">Support us</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 14px;">
+          &#42; notifications about added and deleted tokens.
+        </p>
+        <p style="font-size: 14px;">
+          &#42;&#42; roadmap available on Github.
+        </p>
+      </div>
+    </div>
+
+    <div class="docs-section" id="integrations">
+      <h6 class="docs-header">Integrations</h6>
+
+      <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "centerMode": true}' id="carousel_integrations">
+        <div>
+          <img src="images/integrations/1.png" alt="Uniswap" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/2.png" alt="Twitter" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/3.png" alt="Reddit" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/4.png" alt="4Chan" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/5.png" alt="Ethploler" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/6.png" alt="Blockchair" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/7.png" alt="ChartEX" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/8.png" alt="Etherscan" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/9.png" alt="DEXT" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/10.png" alt="AstroTools" class="screenshot"/>
+          
+        </div>
+        <div>
+          <img src="images/integrations/11.png" alt="UniCrypt" class="screenshot"/>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="docs-section" id="team">
+      <h6 class="docs-header">Team</h6>
+      <div class="row">
+        <div class="four columns">
+          <p>👨‍💼 Tomasz Kowalczyk
+            <ul>
+              <li><strong>originator, development</strong></li>
+              <li><a href="https://t.me/tkowalczyk">Telegram</a></li>
+              <li><a href="https://twitter.com/tomkowalczyk">Twitter</a></li>
+              <li><a href="https://www.youtube.com/channel/UCDAgUeYcYhnhRaK2MAQGLbw">YouTube</a></p></li>
+            </ul>
+        </div>
+        <div class="four columns">
+          <p>👩‍💼 Sheepy
+            <ul>
+              <li><strong>researcher, community</strong></li>
+              <li><a href="https://t.me/SheepyCrypto">Telegram</a></li>
+            </ul>
+        </div>
+        <div class="four columns">
+          <p>👥 You
+            <ul>
+              <li><a href="#contact">Join us :)</a></li>
+            </ul>
+        </div>
+      </div>
     </div>
 
     <div class="docs-section" id="contact">
@@ -274,6 +541,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <section class="footer u-full-width">
@@ -283,7 +551,7 @@
           <h7><b>Navigation</b></h7>
           <p style="font-size: 13px">
           <a href="#intro">Intro</a><br/>
-          <a href="#invest">Invest</a><br/>
+          <a href="#premium">Premium</a><br/>
           <a href="#contact">Contact</a>
           </p>
         </div>
@@ -301,5 +569,20 @@
     </div>
   </section>
 
+  <div id="templates" style="display: none">
+    <template id="template-balance">
+      <tr>
+        <th class="address"></th>
+        <td class="balance"></td>
+      </tr>
+    </template>
+  </div>
+
+  <script type="text/javascript" src="https://unpkg.com/web3@1.3.0/dist/web3.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.1/dist/index.js"></script> 
+
+  <script type="text/javascript" src="js/dapp.js"></script>
+
 </body>
+
 </html>
