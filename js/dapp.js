@@ -19,7 +19,7 @@ function init() {
 
 async function onConnect() {
     
-    $("#donate-value").val(0.15);
+    $("#donate-value").val(0.17);
 
     try {
       provider = await web3Modal.connect();
@@ -148,6 +148,6 @@ $(window).on("load", function() {
     $("#btn-donate").click(onDonate);
 
     $('input[type=number]').on('mouseup keyup', function () {
-        $(this).val(Math.min(10, Math.max(0.15, $(this).val())));
+        $(this).val(Math.min(10, Math.max(0.17, $(this).val())));
       });
 });
