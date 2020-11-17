@@ -37,6 +37,9 @@
     $(function() {
       $("#carousel_integrations").slick()
     });
+    $(function() {
+      $("#carousel_premium").slick()
+    });
   </script>
 
 </head>
@@ -244,7 +247,16 @@
 
       <div id="prepare">
         <p>
-          Please connect your MetaMask wallet to get access to premium version.
+          Please connect your <a href="https://metamask.io/download.html">MetaMask</a> wallet to get access to premium version.</br>
+          Below, short description how to support the project and get the access to premium version.
+          <ol>
+            <li>Click the <i>"Connect wallet"</i> button, you need to have a <a href="https://metamask.io/download.html">MetaMask</a> wallet installed,</li>
+            <li>Fill the form, minimal amout is <strong>0.15 ETH</strong>,</li>
+            <li>Click the <i>"Donate (ETH)"</i> button, you will be asked to confirm the transaction,</li>
+            <li>Wait for confirmation,</li>
+            <li>After confirmation, the popup will be showed, just copy the address to our <i>secret</i> announcements channel on Telegram,</li>
+            <li>Welcome in GemTracker community.</li>
+          </ol>
         </p>
 
         <button class="button button-primary" id="btn-connect">
@@ -282,6 +294,20 @@
 
         <hr>
 
+      </div>
+      <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "centerMode": true}' id="carousel_premium">
+        <div>
+          <img src="images/premium/p1.png" alt="GemTracker Premium part 1" class="screenshot"/>
+        </div>
+        <div>
+          <img src="images/premium/p2.png" alt="GemTracker Premium part 2" class="screenshot"/>
+        </div>
+        <div>
+          <img src="images/premium/p3.png" alt="GemTracker Premium part 3" class="screenshot"/>
+        </div>
+        <div>
+          <img src="images/premium/p4.png" alt="GemTracker Premium part 4" class="screenshot"/>
+        </div>
       </div>
 
     </div>
@@ -429,7 +455,7 @@
           &#42; notifications about added and deleted tokens.
         </p>
         <p style="font-size: 14px;">
-          &#42;&#42; roadmap available on Github.
+          &#42;&#42; roadmap available on <a href="https://github.com/GemTrackerClub/GemTracker/milestones">Github</a>.
         </p>
       </div>
     </div>
