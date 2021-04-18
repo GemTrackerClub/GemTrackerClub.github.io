@@ -1,0 +1,109 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+  background-color: #141414;
+  color: #D9D9D9 !important;
+}
+
+.in-text {
+  color: #BAE637 !important;
+}
+
+code {
+  color: #BAE637 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FADB14 !important;
+  margin: 0.6em 0 0.6em 0;
+}
+
+.gtc-logo {
+  margin: 2em 0 0.2em 0 !important;
+}
+
+.my-4 {
+  color: #D9D9D9 !important;
+}
+
+.bg-dark {
+  background-color: black !important;
+}
+
+.navbar-brand {
+  color: #D9D9D9 !important;
+}
+
+.nav-link {
+  color: #BAE637 !important;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.feature-img {
+  opacity: 0.4;
+}
+
+.feature-img:hover {
+  opacity: 1.0;
+}
+
+.list-group-item {
+  background-color: black !important;
+  border-color: black !important;
+}
+
+.list-group-item.active {
+  background-color: #1D1D1D !important;
+  border-color: #1D1D1D !important;
+}
+
+.card {
+  border: 1px solid #FADB14;
+}
+
+.card-header {
+  background-color: #1D1D1D !important;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.card-body {
+  background-color: #1D1D1D !important;
+}
+
+.card-footer {
+  background-color: #1D1D1D !important;
+  border-top: 1px solid #D9D9D9;
+}
+
+.btn-primary{color:#DCDEDB;background-color:#162312;border-color:#48A918}
+
+.btn-primary:hover{color:#fff;background-color:#48A918;border-color: #48A918}
+.btn-primary:focus,.btn-primary.focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+.btn-primary.disabled,
+.btn-primary:disabled{color:#DCDEDB;background-color:#162312;border-color:#48A918}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle{color:#DCDEDB;background-color:#00b3b3;border-color:#000}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+
+.btn-outline-primary{color:#162312;background-color:transparent;background-image:none;border-color:#162312}
+.btn-outline-primary:hover{color:#222;background-color:#009a9a;border-color:#162312}
+.btn-outline-primary:focus,
+.btn-outline-primary.focus{box-shadow:0 0 0 .2rem rgba(0,128,128,0.5)}
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled{color:#162312;background-color:transparent}
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle{color:#DCDEDB;background-color:#48A918;border-color:#162312}
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #48A918}
